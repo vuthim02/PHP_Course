@@ -1,0 +1,16 @@
+{
+    "name": "php-mastery/shopping-cart",
+    "description": "Shopping Cart System - Level 2 Intermediate PHP Project",
+    "type": "project",
+    "require": {
+        "php": ">=8.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "scripts": {
+        "serve": "php -S localhost:8003 -t public"
+    }
+}

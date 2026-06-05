@@ -1,0 +1,16 @@
+{
+    "name": "php-mastery/event-dispatcher",
+    "description": "Advanced Event Dispatcher & Pub-Sub System",
+    "type": "project",
+    "require": {
+        "php": ">=8.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "EventDispatcher\\": "src/"
+        }
+    },
+    "scripts": {
+        "demo": "php examples/events-demo.php"
+    }
+}

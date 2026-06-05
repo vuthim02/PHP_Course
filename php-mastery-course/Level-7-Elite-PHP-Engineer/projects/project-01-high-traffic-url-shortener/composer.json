@@ -1,0 +1,30 @@
+{
+    "name": "elite/url-shortener",
+    "description": "High-traffic URL shortener with Redis caching, async analytics, rate limiting",
+    "type": "project",
+    "require": {
+        "php": ">=8.2",
+        "ext-redis": "*",
+        "ext-pdo": "*",
+        "ext-json": "*",
+        "vlucas/phpdotenv": "^5.6",
+        "predis/predis": "^2.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^11.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "UrlShortener\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "UrlShortener\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "benchmark": "php benchmarks/benchmark.php",
+        "test": "phpunit"
+    }
+}

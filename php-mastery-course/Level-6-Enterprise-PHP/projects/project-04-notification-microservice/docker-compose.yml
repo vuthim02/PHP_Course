@@ -1,0 +1,79 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: notification-app
+    working_dir: /var/www/html
+    volumes:
+      - .:/var/www/html
+      - ./storage:/var/www/html/storage
+    environment:
+      RABBITMQ_HOST: rabbitmq
+      RABBITMQ_PORT: 5672
+      RABBITMQ_USER: notification
+      RABBITMQ_PASSWORD: notification_pass
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_DATABASE: notifications
+      DB_USERNAME: notification_user
+      DB_PASSWORD: notification_pass
+      APP_ENV: development
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+      mysql:
+        condition: service_healthy
+    restart: unless-stopped
+    networks:
+      - notification-network
+
+  rabbitmq:
+    image: rabbitmq:3.12-management
+    container_name: notification-rabbitmq
+    ports:
+      - "5672:5672"   # AMQP
+      - "15672:15672" # Management UI
+    environment:
+      RABBITMQ_DEFAULT_USER: notification
+      RABBITMQ_DEFAULT_PASS: notification_pass
+      RABBITMQ_DEFAULT_VHOST: /
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "check_port_connectivity"]
+      interval: 15s
+      timeout: 10s
+      retries: 5
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+    networks:
+      - notification-network
+
+  mysql:
+    image: mysql:8.0
+    container_name: notification-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: notifications
+      MYSQL_USER: notification_user
+      MYSQL_PASSWORD: notification_pass
+    ports:
+      - "3308:3306"
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - notification-network
+
+volumes:
+  rabbitmq_data:
+  mysql_data:
+
+networks:
+  notification-network:
+    driver: bridge

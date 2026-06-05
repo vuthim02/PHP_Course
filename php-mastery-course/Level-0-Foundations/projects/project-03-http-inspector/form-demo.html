@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HTTP Inspector — Form Demo</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #0b1120; color: #e2e8f0; padding: 2rem; line-height: 1.6; }
+  .container { max-width: 600px; margin: 0 auto; }
+  h1 { color: #38bdf8; margin-bottom: 0.5rem; }
+  p { color: #94a3b8; margin-bottom: 1.5rem; }
+  .card { background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 2rem; }
+  .form-group { margin-bottom: 1.25rem; }
+  label { display: block; font-weight: 600; font-size: 0.9rem; color: #cbd5e1; margin-bottom: 0.35rem; }
+  input, select, textarea {
+    width: 100%; padding: 0.7rem 0.9rem; border: 1px solid #334155;
+    border-radius: 8px; background: #0f172a; color: #e2e8f0;
+    font-family: inherit; font-size: 1rem; transition: border-color 0.2s;
+  }
+  input:focus, select:focus, textarea:focus {
+    outline: none; border-color: #38bdf8; box-shadow: 0 0 0 3px rgba(56,189,248,0.15);
+  }
+  .radio-group, .checkbox-group { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top: 0.25rem; }
+  .radio-group label, .checkbox-group label { font-weight: 400; font-size: 0.95rem; display: inline-flex; align-items: center; gap: 0.4rem; }
+  input[type="radio"], input[type="checkbox"] { width: auto; }
+  .btn-group { display: flex; gap: 1rem; margin-top: 1.5rem; }
+  button, .btn {
+    padding: 0.7rem 1.5rem; border-radius: 8px; font-weight: 600;
+    font-size: 0.95rem; cursor: pointer; border: 2px solid transparent;
+    transition: all 0.2s; text-decoration: none; display: inline-block;
+  }
+  .btn-primary { background: #38bdf8; color: #0b1120; }
+  .btn-primary:hover { background: #7dd3fc; }
+  .btn-secondary { background: transparent; border-color: #334155; color: #94a3b8; }
+  .btn-secondary:hover { border-color: #38bdf8; color: #38bdf8; }
+  .badge { display: inline-block; background: #334155; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; color: #94a3b8; margin-left: 0.5rem; }
+  hr { border: 0; border-top: 1px solid #334155; margin: 1.5rem 0; }
+  footer { text-align: center; color: #475569; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #1e293b; font-size: 0.8rem; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Form Demo</h1>
+  <p>Submit this form via <strong>GET</strong> or <strong>POST</strong> to inspect how HTTP sends data. After submitting, check <strong>index.php</strong> to see the method, headers, parameters, and body.</p>
+
+  <div class="card">
+    <form action="index.php" method="get">
+      <h2 style="color:#fbbf24;margin-bottom:1rem;">GET Form</h2>
+      <div class="form-group">
+        <label for="get-name">Name</label>
+        <input type="text" id="get-name" name="name" placeholder="e.g. Alex Rivera" value="Alex Rivera">
+      </div>
+      <div class="form-group">
+        <label for="get-role">Role</label>
+        <select id="get-role" name="role">
+          <option value="developer">Developer</option>
+          <option value="designer">Designer</option>
+          <option value="devops">DevOps Engineer</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Interests</label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="interests[]" value="php" checked> PHP</label>
+          <label><input type="checkbox" name="interests[]" value="javascript"> JavaScript</label>
+          <label><input type="checkbox" name="interests[]" value="devops" checked> DevOps</label>
+        </div>
+      </div>
+      <button type="submit" class="btn-primary">Submit GET</button>
+    </form>
+
+    <hr>
+
+    <form action="index.php" method="post">
+      <h2 style="color:#34d399;margin-bottom:1rem;">POST Form</h2>
+      <div class="form-group">
+        <label for="post-email">Email</label>
+        <input type="email" id="post-email" name="email" placeholder="alex@example.com" value="alex@example.com">
+      </div>
+      <div class="form-group">
+        <label for="post-message">Message</label>
+        <textarea id="post-message" name="message" rows="3" placeholder="Write something…">Hello from the HTTP Inspector!</textarea>
+      </div>
+      <div class="form-group">
+        <label>Subscribe</label>
+        <div class="radio-group">
+          <label><input type="radio" name="subscribe" value="yes" checked> Yes</label>
+          <label><input type="radio" name="subscribe" value="no"> No</label>
+        </div>
+      </div>
+      <button type="submit" class="btn-primary">Submit POST</button>
+    </form>
+  </div>
+
+  <div style="margin-top:1.5rem;text-align:center;">
+    <a href="index.php" class="btn btn-secondary">View Inspector Results</a>
+  </div>
+</div>
+
+<footer>HTTP Inspector — Form Demo</footer>
+</body>
+</html>

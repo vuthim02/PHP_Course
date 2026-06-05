@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "name": "tim",
+        "email": "vuthim@gmail.cm",
+        "message": "hello php",
+        "created_at": "2026-06-03 14:06:55"
+    },
+    {
+        "id": 2,
+        "name": "dfgh",
+        "email": "fghj@gmail.com",
+        "message": "fgh",
+        "created_at": "2026-06-03 14:07:55"
+    }
+]

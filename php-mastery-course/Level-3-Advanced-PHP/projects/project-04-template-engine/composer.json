@@ -1,0 +1,16 @@
+{
+    "name": "php-mastery/template-engine",
+    "description": "Lightweight PHP Template Engine with Caching (Twig/Blade-like)",
+    "type": "project",
+    "require": {
+        "php": ">=8.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "TemplateEngine\\": "src/"
+        }
+    },
+    "scripts": {
+        "demo": "php examples/template-demo.php"
+    }
+}

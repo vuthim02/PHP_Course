@@ -1,0 +1,24 @@
+{
+    "name": "php-mastery/notification-microservice",
+    "description": "Level 6 — Notification Microservice with RabbitMQ",
+    "type": "project",
+    "require": {
+        "php": ">=8.1",
+        "ext-pdo": "*",
+        "ext-mbstring": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.0",
+        "php-amqplib/php-amqplib": "^3.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "NotificationService\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "NotificationService\\Tests\\": "tests/"
+        }
+    }
+}

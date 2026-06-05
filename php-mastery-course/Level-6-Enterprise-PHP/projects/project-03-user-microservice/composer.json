@@ -1,0 +1,23 @@
+{
+    "name": "php-mastery/user-microservice",
+    "description": "Level 6 — Dockerized User Management Microservice",
+    "type": "project",
+    "require": {
+        "php": ">=8.1",
+        "ext-pdo": "*",
+        "ext-redis": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "UserService\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "UserService\\Tests\\": "tests/"
+        }
+    }
+}

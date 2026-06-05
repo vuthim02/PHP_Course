@@ -1,0 +1,17 @@
+{
+    "name": "php-mastery/mini-orm",
+    "description": "Lightweight ORM with PHP 8 Attributes and Reflection",
+    "type": "project",
+    "require": {
+        "php": ">=8.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "MiniORM\\": "src/ORM/",
+            "Models\\": "src/Models/"
+        }
+    },
+    "scripts": {
+        "demo": "php examples/crud.php"
+    }
+}

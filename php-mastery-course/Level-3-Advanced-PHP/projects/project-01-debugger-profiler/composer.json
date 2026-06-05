@@ -1,0 +1,16 @@
+{
+    "name": "php-mastery/debugger-profiler",
+    "description": "Advanced PHP Debugger & Profiler Tool",
+    "type": "project",
+    "require": {
+        "php": ">=8.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "DebuggerProfiler\\": "src/"
+        }
+    },
+    "scripts": {
+        "demo": "php examples/demo.php"
+    }
+}
