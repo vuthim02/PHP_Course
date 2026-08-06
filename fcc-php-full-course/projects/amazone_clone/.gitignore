@@ -1,0 +1,13 @@
+# Secrets & local files — never commit these.
+app/config.php
+
+# The generated SQLite database (recreate with: php database/setup.php)
+database/*.sqlite
+
+# User-uploaded product images (admin, Phase 6+)
+public/uploads/*
+!public/uploads/.gitkeep
+
+# OS cruft
+.DS_Store
+Thumbs.db

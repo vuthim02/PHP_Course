@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="250" viewBox="0 0 400 250">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#b02a1f"/>
+      <stop offset="1" stop-color="#e2583f"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="250" rx="16" fill="url(#g)"/>
+  <rect x="22" y="22" width="356" height="206" rx="12" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="2"/>
+  <text x="40" y="78" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#febd69">amazone</text>
+  <text x="40" y="104" font-family="Arial, sans-serif" font-size="15" fill="#ffd9cf">Gift Card</text>
+  <text x="40" y="196" font-family="Arial, sans-serif" font-size="54" font-weight="bold" fill="#ffffff">$200</text>
+  <g transform="translate(292,52)">
+    <rect x="14" y="34" width="52" height="40" rx="4" fill="#febd69"/>
+    <rect x="28" y="6" width="24" height="68" rx="3" fill="#f3a847"/>
+    <rect x="4" y="34" width="72" height="9" rx="4" fill="#f3a847"/>
+  </g>
+</svg>

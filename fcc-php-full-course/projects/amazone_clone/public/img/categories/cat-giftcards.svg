@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#131921"/>
+      <stop offset="1" stop-color="#2d7dd2"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="400" fill="url(#g)"/>
+  <text x="40" y="300" font-family="Arial, sans-serif" font-size="34" font-weight="bold" fill="#febd69">Gift Cards</text>
+  <text x="40" y="344" font-family="Arial, sans-serif" font-size="20" fill="#ffffff">The gift of choice</text>
+  <g transform="translate(430,60) scale(1.1)">
+    <rect x="20" y="150" width="130" height="100" rx="8" fill="#febd69"/>
+    <rect x="55" y="90" width="60" height="160" rx="6" fill="#f3a847"/>
+    <rect x="0" y="150" width="170" height="24" rx="8" fill="#f3a847"/>
+    <circle cx="85" cy="78" r="18" fill="#fff"/>
+    <circle cx="85" cy="78" r="12" fill="#f3a847"/>
+  </g>
+  <g transform="translate(590,60) scale(.85)">
+    <rect x="20" y="150" width="130" height="100" rx="8" fill="#febd69"/>
+    <rect x="55" y="90" width="60" height="160" rx="6" fill="#f3a847"/>
+    <rect x="0" y="150" width="170" height="24" rx="8" fill="#f3a847"/>
+    <circle cx="85" cy="78" r="18" fill="#fff"/>
+    <circle cx="85" cy="78" r="12" fill="#f3a847"/>
+  </g>
+</svg>
